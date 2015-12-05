@@ -13,12 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150316184013) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "blabs", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "content",    null: false
+    t.integer  "user_id",    limit: 4
+    t.string   "content",    limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,17 +23,17 @@ ActiveRecord::Schema.define(version: 20150316184013) do
   add_index "blabs", ["user_id"], name: "index_blabs_on_user_id", using: :btree
 
   create_table "oauths", force: :cascade do |t|
-    t.string "token",  null: false
-    t.string "secret", null: false
+    t.string "token",  limit: 255, null: false
+    t.string "secret", limit: 255, null: false
   end
 
   add_index "oauths", ["token"], name: "index_oauths_on_token", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "uid",        null: false
-    t.string   "handle",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "uid",        limit: 255, null: false
+    t.string   "handle",     limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
