@@ -11,7 +11,7 @@
 /vendor
 
 # Ignore node modules directory
-/node_modules
+/node_modules/
 
 # Ignore webpack dev builds
 /public/bundle.js.map
@@ -20,10 +20,12 @@
 # Ignore all logfiles and tempfiles
 /log/*
 !/log/.keep
-/tmp
+/tmp/
 
 # Ignore system files
 .DS_Store
 
 # Ignore environment files
 /config/environments/development.rb
+
+/npm-debug.log
