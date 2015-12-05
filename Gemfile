@@ -1,14 +1,20 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.3'
 
-gem 'rails', '4.2.0'
+gem 'rails'
 gem 'rails-api'
+
+gem 'jwt'
+gem 'mysql2'
 gem 'oauth'
 gem 'puma'
-gem 'jwt'
-gem 'pg'
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
